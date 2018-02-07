@@ -5,5 +5,13 @@ $(function main() {
 
 	$button.on('click', function() {
 		$h1.html(++counts);
+		window.history.pushState(
+			{
+				html: counts,
+				counts: counts
+			},
+			'',
+			'/?counts=' + counts
+		);
 	});
 });
